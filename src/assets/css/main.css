@@ -1,0 +1,456 @@
+html,
+.app-body {
+  overflow-x: hidden;
+}
+
+footer {
+  background: -webkit-gradient(linear, left top, left bottom, from(#06182e), to(#06172b));
+  background: linear-gradient(#06182e, #06172b);
+  width: 100%;
+  height: 100px;
+}
+
+header {
+  background: #0a2b50;
+}
+
+header .trello-logo {
+  border: 2px solid #fff;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 0.3em 0;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: none !important;
+}
+
+.board-list {
+  padding: 0 0 80px 0;
+}
+
+.board-list .header-row {
+  background: url("https://images.wallpaperscraft.com/image/grass_scrap_vegetation_faded_mountains_distance_53910_2560x1440.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 150px;
+  margin: 0 0 80px 0;
+}
+
+.board-list .header-row .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.board-list .header-row h1 {
+  color: #fff;
+  font-weight: 300;
+}
+
+.board {
+  position: relative;
+  border-radius: 7px;
+}
+
+.board h3 {
+  font-weight: 700;
+  font-size: 1.25em;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 290ms;
+  transition: 290ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.board h3:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #d8d8d8;
+}
+
+.board h5 {
+  font-weight: 600;
+  font-size: 1em;
+  color: #fff;
+}
+
+.board button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 5px;
+  text-align: center;
+  padding: 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  opacity: 1;
+}
+
+.board button::after {
+  position: absolute;
+  height: 25px;
+  width: 80px;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: rgba(7, 7, 7, 0.747);
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  bottom: 30px;
+  left: 0px;
+}
+
+.board button:hover {
+  opacity: 0.8;
+}
+
+.board button:hover::after {
+  opacity: 1;
+}
+
+.board button.delete {
+  left: 50px;
+  color: #ff3535;
+}
+
+.board button.edit {
+  left: 10px;
+}
+
+.board button.delete::after {
+  content: "Delete board";
+}
+
+.board button.update::after {
+  content: "Save";
+}
+
+.board button.edit::after {
+  content: "Toggle edit";
+}
+
+.active-board {
+  padding: 80px 0 80px 0;
+}
+
+.active-board h1 {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.card {
+  background: #dfe1e6;
+}
+
+.card h5 {
+  color: #172b4d;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.7em;
+  cursor: pointer;
+}
+
+.card .card-header input {
+  color: #172b4d;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #172b4d;
+  padding-bottom: 0.1em;
+}
+
+.card .card-header button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  opacity: 1;
+  position: relative;
+}
+
+.card .card-header button.back {
+  float: right;
+}
+
+.card .card-header button.delete {
+  color: #ff3535;
+}
+
+.card .card-header button::after {
+  position: absolute;
+  height: 25px;
+  width: 80px;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: rgba(7, 7, 7, 0.747);
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  top: 30px;
+  left: 0px;
+}
+
+.card .card-header button.delete::after {
+  content: "Delete card";
+}
+
+.card .card-header button.update::after {
+  content: "Save changes";
+}
+
+.card .card-header button.back::after {
+  content: "Close editor";
+}
+
+.card .card-header button:hover::after {
+  opacity: 1;
+}
+
+.item {
+  padding: 0.2em 0.4em;
+  background: #fff;
+  border-radius: 5px;
+  margin: 4px 6px;
+  cursor: pointer;
+}
+
+.item h6 {
+  font-size: 0.9em;
+}
+
+.item input {
+  color: #071020;
+  font-size: 0.9em;
+  font-weight: 700;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #0a111d;
+  padding-bottom: 0.1em;
+}
+
+.item button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  opacity: 1;
+  position: relative;
+}
+
+.item button.back {
+  float: right;
+}
+
+.item button.delete {
+  color: #ff3535;
+}
+
+.item button::after {
+  position: absolute;
+  height: 25px;
+  width: 80px;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: rgba(7, 7, 7, 0.747);
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  top: 30px;
+  left: 0px;
+}
+
+.item button.delete::after {
+  content: "Delete item";
+}
+
+.item button.update::after {
+  content: "Save changes";
+}
+
+.item button.back::after {
+  content: "Close editor";
+}
+
+.item button:hover::after {
+  opacity: 1;
+}
+
+.add-item {
+  margin: 1em 0.2em;
+  padding-left: 0.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.add-item input {
+  color: #071020;
+  font-size: 0.9em;
+  font-weight: 700;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #0a111d98;
+  padding: 0.3em;
+  max-width: 70%;
+}
+
+.add-item button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  opacity: 1;
+  position: relative;
+  margin: 0 0 0 20px;
+}
+
+.add-item button::after {
+  content: "Add item";
+  position: absolute;
+  height: 25px;
+  width: 80px;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: rgba(7, 7, 7, 0.747);
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  top: 30px;
+  left: 0px;
+}
+
+.add-item button:hover::after {
+  opacity: 1;
+}
+
+.add-card input::-webkit-input-placeholder,
+.add-board input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.829);
+}
+
+.add-card input:-ms-input-placeholder,
+.add-board input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.829);
+}
+
+.add-card input::-ms-input-placeholder,
+.add-board input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.829);
+}
+
+.add-card input::placeholder,
+.add-board input::placeholder {
+  color: rgba(255, 255, 255, 0.829);
+}
+
+.add-card .input-mode input,
+.add-board .input-mode input {
+  color: #d1d4d8;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #e7e7e7;
+  padding-bottom: 0.1em;
+}
+
+.add-card .input-mode button,
+.add-board .input-mode button {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  opacity: 1;
+  position: relative;
+}
+
+.add-card .input-mode button::after,
+.add-board .input-mode button::after {
+  position: absolute;
+  height: 25px;
+  width: 80px;
+  font-size: 0.8em;
+  font-weight: 700;
+  background: rgba(7, 7, 7, 0.747);
+  color: #fff;
+  opacity: 0;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  top: 30px;
+  left: 0px;
+}
+
+.add-card .input-mode button:hover::after,
+.add-board .input-mode button:hover::after {
+  opacity: 1;
+}
+
+.add-card .input-mode button.update::after,
+.add-board .input-mode button.update::after {
+  content: "Add card";
+}
+
+.add-card .input-mode button.back::after,
+.add-board .input-mode button.back::after {
+  content: "Close editor";
+}
+
+.add-board input::-webkit-input-placeholder {
+  color: rgba(13, 24, 75, 0.829);
+}
+
+.add-board input:-ms-input-placeholder {
+  color: rgba(13, 24, 75, 0.829);
+}
+
+.add-board input::-ms-input-placeholder {
+  color: rgba(13, 24, 75, 0.829);
+}
+
+.add-board input::placeholder {
+  color: rgba(13, 24, 75, 0.829);
+}
+
+.add-board .input-mode input {
+  color: #091a30;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #070433;
+  padding-bottom: 0.1em;
+}
+
+.add-board .input-mode button.update::after {
+  content: "Add board";
+}
+/*# sourceMappingURL=main.css.map */
