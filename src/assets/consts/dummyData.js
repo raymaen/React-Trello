@@ -54,7 +54,8 @@ for (let i = 0; i < 3; i++) {
 const initialState = {
   boards,
   cards,
-  items
+  items,
+  selected : null
 };
 
 export default initialState;

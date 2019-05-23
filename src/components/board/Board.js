@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateBoard, removeBoard } from "../../actions/boardActions";
+import { selectBoard } from "../../actions/selectActions";
 
 export class Board extends Component {
   state = {
@@ -9,8 +10,9 @@ export class Board extends Component {
     showUpdate: false
   };
 
-  nextPath = path => {
-    this.props.history.push(path);
+  nextPath = () => {
+    this.props.selectBoard(this.props.board.id)
+    this.props.history.push(`/board/${this.props.board.id}`);
   };
 
   renderTitle = () => {
@@ -58,10 +60,7 @@ export class Board extends Component {
       );
     } else {
       return (
-        <h3
-         
-          onClick={() => this.nextPath(`/board/${this.props.board.id}`)}
-        >
+        <h3 onClick={() => this.nextPath()}>
           {this.props.board.title}
         </h3>
       );
@@ -108,7 +107,8 @@ export class Board extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     updateBoard: board => dispatch(updateBoard(board)),
-    removeBoard: id => dispatch(removeBoard(id))
+    removeBoard: id => dispatch(removeBoard(id)),
+    selectBoard : id => dispatch(selectBoard(id))
   };
 };
 

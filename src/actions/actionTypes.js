@@ -10,3 +10,4 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 export const SELECT_BOARD = 'SELECT_BOARD'
 export const SELECT_CARD = 'SELECT_CARD'
 export const GET_SELECTED_STATUS = 'GET_SELECTED_STATUS'
+

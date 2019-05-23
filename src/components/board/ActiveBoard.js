@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import { Redirect } from 'react-router-dom'
+
 import Card from "../card/Card";
 import AddCard from "../card/AddCard";
 
 export class ActiveBoard extends Component {
   render() {
+
+    console.log(this.props.selected)
+
+    if(this.props.selected === null)
+    return <Redirect to="/"/>
+
     const { allCards, board } = this.props;
 
     const allCardsConteiner = allCards.map(({ card, items }) => (
@@ -61,13 +69,12 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     board,
-    allCards
+    allCards,
+    selected : state.selected
   };
 };
 
-const mapDispatchToProps = {};
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(ActiveBoard);
